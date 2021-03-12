@@ -78,3 +78,15 @@ void postOrder( TreeNodePtr treePtr ){
     printf("%3d",treePtr->data);
   }
 }
+
+void printTree(TreeNodePtr treePtr, int level){
+  if(treePtr!=NULL){
+    printTree(treePtr->rightPtr,++level);
+    level--;
+    for(int i=0;i<level;i++){
+      printf("\t");
+    }
+    printf("%d\n",treePtr->data);
+    printTree(treePtr->leftPtr, ++level);
+  }
+}

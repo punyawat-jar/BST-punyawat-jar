@@ -18,7 +18,7 @@ for ( i = 1; i < argc; ++i ) {
    } // end for
    // traverse the tree preOrder
    puts( "\n\nThe preOrder traversal is:" );
-   //preOrder( rootPtr );
+   preOrder( b.rootPtr );
 
    // traverse the tree inOrder
    puts( "\n\nThe inOrder traversal is:" );
@@ -26,5 +26,8 @@ for ( i = 1; i < argc; ++i ) {
 
    // traverse the tree postOrder
    puts( "\n\nThe postOrder traversal is:" );
-   //postOrder( rootPtr );
-} // end main
+   postOrder( b.rootPtr );
+
+   puts( "\n\nThe Tree is:" );
+   printTree( b.rootPtr,0);
+}
