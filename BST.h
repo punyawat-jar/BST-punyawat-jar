@@ -39,13 +39,12 @@ void insertNode( BST *b, int value ){
         if(!t->rightPtr){
           t->rightPtr = new_node;
           inserted = 1;
+          b->size++;
         }
         t = t->rightPtr;
-	    }	
-
-    }//end while
-		
-  }//end else;
+	    }
+    }
+  }
   
   }
 
@@ -62,5 +61,20 @@ void inOrder( TreeNodePtr treePtr )
    } // end if                          
 } // end function 
 
-void preOrder( TreeNodePtr treePtr ){}
-void postOrder( TreeNodePtr treePtr ){}
+
+void preOrder( TreeNodePtr treePtr ){
+  if(treePtr != NULL){
+    printf("%3d",treePtr->data);
+    preOrder(treePtr->leftPtr);
+    preOrder(treePtr->rightPtr);
+  }
+
+
+}
+void postOrder( TreeNodePtr treePtr ){
+  if(treePtr != NULL){
+    postOrder(treePtr->leftPtr);
+    postOrder(treePtr->rightPtr);
+    printf("%3d",treePtr->data);
+  }
+}
